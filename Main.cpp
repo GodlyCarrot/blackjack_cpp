@@ -1,9 +1,13 @@
 #include <iostream>
 using namespace std;
 
+int addCards();
+
 int main() {
   cout << "Hello World!";
   return 0;
 }
 
-//check
+int addCards() {
+  return 0;
+}
