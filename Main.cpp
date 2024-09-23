@@ -1,13 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int addCards();
+class Card {
+  public:
+    string name;
+    int value;
+
+    Card(string x, int y) {
+      name = x;
+      value = y;
+    }
+};
 
 int main() {
   cout << "Hello World!";
-  return 0;
-}
-
-int addCards() {
   return 0;
 }
