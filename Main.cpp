@@ -13,6 +13,8 @@ class Card {
       value = z;
     }
 
+    Card() {}
+
     string getName() {
       return suit + " " + name;
     }
@@ -22,8 +24,16 @@ class Card {
     }
 };
 
+Card deck[52];
+
 void makeDeck() {
-  Card deck[52];
+  //Card deck[52];
+  int n = 0;
+  for (int i = 1; i < 11; i++) {
+    for (int j = 1; j < 5; j++) {
+      n += 1; //place holder for now
+    }
+  }
 }
 
 int main() {
@@ -34,6 +44,10 @@ int main() {
   c1.getValue();
 
   makeDeck();
+
+  for (int i = 0; i < 53; i++) {
+    cout << deck[i];
+  }
 
   return 0;
 }
