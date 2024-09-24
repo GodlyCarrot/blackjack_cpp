@@ -22,12 +22,18 @@ class Card {
     }
 };
 
+void makeDeck() {
+  Card deck[52];
+}
+
 int main() {
   cout << "Hello World! \n";
 
   Card c1("Test", "Twelve", 12);
   c1.getName();
   c1.getValue();
+
+  makeDeck();
 
   return 0;
 }
