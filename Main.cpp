@@ -28,7 +28,7 @@ class Card {
     }
 
     string getFullName() {
-      return suit + " " + name + " ";
+      return name + " of " + suit + " ";
     }
 
     int getValue() {
@@ -57,6 +57,30 @@ void makeDeck() {
   for (int j = 0; j < 52; j++){
     if (deck[n2].getValue() == 1) {
       deck[n2].setName("One");
+      n2+=1;
+    } else if (deck[n2].getValue() == 2) {
+      deck[n2].setName("Two");
+      n2+=1;
+    } else if (deck[n2].getValue() == 3) {
+      deck[n2].setName("Three");
+      n2+=1;
+    } else if (deck[n2].getValue() == 4) {
+      deck[n2].setName("Four");
+      n2+=1;
+    } else if (deck[n2].getValue() == 5) {
+      deck[n2].setName("Five");
+      n2+=1;
+    } else if (deck[n2].getValue() == 6) {
+      deck[n2].setName("Six");
+      n2+=1;
+    } else if (deck[n2].getValue() == 7) {
+      deck[n2].setName("Seven");
+      n2+=1;
+    } else if (deck[n2].getValue() == 8) {
+      deck[n2].setName("Eight");
+      n2+=1;
+    } else if (deck[n2].getValue() == 9) {
+      deck[n2].setName("Nine");
       n2+=1;
     }
   }
