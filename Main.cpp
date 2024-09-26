@@ -27,8 +27,8 @@ class Card {
       value = z;
     }
 
-    string getName() {
-      return suit + " " + name;
+    string getFullName() {
+      return suit + " " + name + " ";
     }
 
     int getValue() {
@@ -40,6 +40,8 @@ Card deck[52];
 
 void makeDeck() {
   //Card deck[52];
+
+  //adds card values
   int n = 0;
   int v = 1;
   const float constant = 0.15;
@@ -50,18 +52,27 @@ void makeDeck() {
       v+=1;
     }
   }
+
+  int n2 = 0;
+  for (int j = 0; j < 52; j++){
+    if (deck[n2].getValue() == 1) {
+      deck[n2].setName("One");
+      n2+=1;
+    }
+  }
 }
 
 int main() {
   cout << "Hello World! \n";
 
   Card c1("Test", "Twelve", 12);
-  c1.getName();
+  c1.getFullName();
   c1.getValue();
 
   makeDeck();
 
   for (int i = 0; i < 52; i++) {
+    cout << deck[i].getFullName();
     cout << deck[i].getValue() << endl;
   }
 
