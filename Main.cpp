@@ -15,6 +15,18 @@ class Card {
 
     Card() {}
 
+    void setSuit(string x) {
+      suit = x;
+    }
+
+    void setName(string y) {
+      name = y;
+    }
+
+    void setValue(int z) {
+      value = z;
+    }
+
     string getName() {
       return suit + " " + name;
     }
@@ -29,9 +41,13 @@ Card deck[52];
 void makeDeck() {
   //Card deck[52];
   int n = 0;
-  for (int i = 1; i < 11; i++) {
-    for (int j = 1; j < 5; j++) {
-      n += 1; //place holder for now
+  int v = 1;
+  const float constant = 0.15;
+  for (int i = 1; i < 53; i++) {
+    deck[n].setValue(v);
+    n+=1;
+    if ((i%4 == 0) && (i <= 36)) {
+      v+=1;
     }
   }
 }
@@ -45,8 +61,8 @@ int main() {
 
   makeDeck();
 
-  for (int i = 0; i < 53; i++) {
-    cout << deck[i];
+  for (int i = 0; i < 52; i++) {
+    cout << deck[i].getValue() << endl;
   }
 
   return 0;
