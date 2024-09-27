@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Card {
@@ -36,69 +37,29 @@ class Card {
     }
 };
 
-Card deck[52];
+std::vector<Card> deck;
 
 void makeDeck() {
-  //Card deck[52];
-
-  //adds card values
-  int n = 0;
-  int v = 1;
-  const float constant = 0.15;
-  for (int i = 1; i < 53; i++) {
-    deck[n].setValue(v);
-    n+=1;
-    if ((i%4 == 0) && (i <= 36)) {
-      v+=1;
-    }
-  }
-
-  int n2 = 0;
-  for (int j = 0; j < 52; j++){
-    if (deck[n2].getValue() == 1) {
-      deck[n2].setName("One");
-      n2+=1;
-    } else if (deck[n2].getValue() == 2) {
-      deck[n2].setName("Two");
-      n2+=1;
-    } else if (deck[n2].getValue() == 3) {
-      deck[n2].setName("Three");
-      n2+=1;
-    } else if (deck[n2].getValue() == 4) {
-      deck[n2].setName("Four");
-      n2+=1;
-    } else if (deck[n2].getValue() == 5) {
-      deck[n2].setName("Five");
-      n2+=1;
-    } else if (deck[n2].getValue() == 6) {
-      deck[n2].setName("Six");
-      n2+=1;
-    } else if (deck[n2].getValue() == 7) {
-      deck[n2].setName("Seven");
-      n2+=1;
-    } else if (deck[n2].getValue() == 8) {
-      deck[n2].setName("Eight");
-      n2+=1;
-    } else if (deck[n2].getValue() == 9) {
-      deck[n2].setName("Nine");
-      n2+=1;
-    }
-  }
+  deck.push_back(Card("Test", "Twelve", 12));
 }
 
 int main() {
   cout << "Hello World! \n";
 
-  Card c1("Test", "Twelve", 12);
-  c1.getFullName();
-  c1.getValue();
+  Card cc("Test", "Twelve", 12);
+  cc.getFullName();
+  cc.getValue();
 
   makeDeck();
 
+  /*
   for (int i = 0; i < 52; i++) {
     cout << deck[i].getFullName();
     cout << deck[i].getValue() << endl;
   }
+  */
+
+  cout << deck[0].getFullName();
 
   return 0;
 }
