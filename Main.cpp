@@ -41,6 +41,12 @@ std::vector<Card> deck;
 
 void makeDeck() {
   deck.push_back(Card("Test", "Twelve", 12));
+
+  int vn = 1;
+  for (int i = 0; i < 52; i++) {
+    deck.push_back(Card("Test", "Number", vn));
+    vn+=1;
+  }
 }
 
 int main() {
@@ -52,14 +58,10 @@ int main() {
 
   makeDeck();
 
-  /*
   for (int i = 0; i < 52; i++) {
     cout << deck[i].getFullName();
     cout << deck[i].getValue() << endl;
   }
-  */
-
-  cout << deck[0].getFullName();
 
   return 0;
 }
