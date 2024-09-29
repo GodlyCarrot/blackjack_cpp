@@ -40,12 +40,18 @@ class Card {
 std::vector<Card> deck;
 
 void makeDeck() {
-  deck.push_back(Card("Test", "Twelve", 12));
+  //deck.push_back(Card("Test", "Twelve", 12));
 
   int vn = 1;
-  for (int i = 0; i < 52; i++) {
-    deck.push_back(Card("Test", "Number", vn));
-    vn+=1;
+  string suit = "Test";
+  string num = "One";
+  for (int i = 1; i < 54; i++) {
+    deck.push_back(Card(suit, num, vn));
+    if ((i%4 == 0) && (vn < 10)) {
+      vn+=1;
+      if (vn == 2) { num = "Two"; } else if (vn == 3) { num = "Three"; } else if (vn == 4) { num = "Four"; } else if (vn == 5) { num = "Five"; } else if (vn == 6) { num = "Six";} else if (vn == 7) { num = "Seven"; } else if (vn == 8) { num = "Eight"; } else if (vn == 9) { num = "Nine"; } else if (vn >= 10) { num = "IDK"; } 
+      //
+    }
   }
 }
 
