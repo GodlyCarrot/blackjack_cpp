@@ -47,7 +47,7 @@ void makeDeck() {
   string num = "One";
   for (int i = 1; i < 54; i++) {
     deck.push_back(Card(suit, num, vn));
-    if ((i%4 == 0) && (vn < 10)) {
+    if ((i%4 == 0)) {
       vn+=1;
       if (vn == 2) { 
         num = "Two"; 
@@ -66,7 +66,15 @@ void makeDeck() {
       } else if (vn == 9) {
         num = "Nine";
       } else if (vn >= 10) {
-        num = "10";
+        if (i < 40) {
+          num = "Ten";
+        } else if (i < 41) {
+          num = "Jack";
+        } else if (i < 45) {
+          num = "Queen";
+        } else if (i < 50) {
+          num = "King";
+        }
       } 
     }
   }
