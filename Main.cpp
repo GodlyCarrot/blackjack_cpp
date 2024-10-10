@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 class Card {
@@ -90,19 +92,39 @@ void makeDeck() {
   }
 }
 
+void play() {
+  srand(time(0));
+  int cOne = rand() % 52;
+  int cTwo = rand() % 52;
+
+  //why no random ^^^
+
+  cout << cOne << endl;
+  cout << cTwo << endl;
+
+  cout << deck[cOne].getFullName();
+  cout << deck[cOne].getValue() << endl;
+
+  cout << deck[cTwo].getFullName();
+  cout << deck[cTwo].getValue() << endl;
+}
+
 int main() {
-  cout << "Hello World! \n";
+  cout << "Welcome to BlackJack! \n";
 
   Card cc("Test", "Twelve", 12);
   cc.getFullName();
   cc.getValue();
 
   makeDeck();
+  play();
 
+  /*
   for (int i = 0; i < 52; i++) {
     cout << deck[i].getFullName();
     cout << deck[i].getValue() << endl;
   }
+  */
 
   return 0;
 }
