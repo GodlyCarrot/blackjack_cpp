@@ -44,11 +44,15 @@ void makeDeck() {
 
   int vn = 1;
   string suit = "Test";
-  string num = "One";
+  string num = "Ace";
   for (int i = 1; i < 54; i++) {
     deck.push_back(Card(suit, num, vn));
-    if ((i%4 == 0)) {
+
+    //
+    if (i%4 == 0) {
       vn+=1;
+      suit = "Hearts";
+
       if (vn == 2) { 
         num = "Two"; 
       } else if (vn == 3) { 
@@ -75,7 +79,13 @@ void makeDeck() {
         } else if (i < 50) {
           num = "King";
         }
-      } 
+      }
+    } else if (i%4 == 1) {
+      suit = "Spades";
+    } else if (i%4 == 2) {
+      suit = "Diamonds";
+    } else if (i%4 == 3) {
+      suit = "Clubs";
     }
   }
 }
