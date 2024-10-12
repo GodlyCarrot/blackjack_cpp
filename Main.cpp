@@ -31,7 +31,7 @@ class Card {
     }
 
     string getFullName() {
-      return name + " of " + suit + " ";
+      return name + " of " + suit;
     }
 
     int getValue() {
@@ -45,7 +45,7 @@ void makeDeck() {
   //deck.push_back(Card("Test", "Twelve", 12));
 
   int vn = 1;
-  string suit = "Test";
+  string suit = "Hearts";
   string num = "Ace";
   for (int i = 1; i < 54; i++) {
     deck.push_back(Card(suit, num, vn));
@@ -97,16 +97,8 @@ void play() {
   int cOne = rand() % 52;
   int cTwo = rand() % 52;
 
-  //why no random ^^^
-
-  cout << cOne << endl;
-  cout << cTwo << endl;
-
-  cout << deck[cOne].getFullName();
-  cout << deck[cOne].getValue() << endl;
-
-  cout << deck[cTwo].getFullName();
-  cout << deck[cTwo].getValue() << endl;
+  cout << "You cards are: ";
+  cout << deck[cOne].getFullName() + " and " + deck[cTwo].getFullName() << endl;
 }
 
 int main() {
