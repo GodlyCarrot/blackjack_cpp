@@ -74,12 +74,16 @@ void makeDeck() {
       } else if (vn >= 10) {
         if (i < 40) {
           num = "Ten";
+          vn-=0;
         } else if (i < 41) {
           num = "Jack";
+          vn-=1;
         } else if (i < 45) {
           num = "Queen";
+          vn-=1;
         } else if (i < 50) {
           num = "King";
+          vn-=1;
         }
       }
     } else if (i%4 == 1) {
@@ -97,8 +101,13 @@ void play() {
   int cOne = rand() % 52;
   int cTwo = rand() % 52;
 
+  int value = deck[cOne].getValue() + deck[cTwo].getValue();
+
   cout << "You cards are: ";
   cout << deck[cOne].getFullName() + " and " + deck[cTwo].getFullName() << endl;
+  cout << "The value is: ";
+  cout << value << endl;
+  cout << "\nWould you like to hit or stand?"; 
 }
 
 int main() {
@@ -113,7 +122,7 @@ int main() {
 
   /*
   for (int i = 0; i < 52; i++) {
-    cout << deck[i].getFullName();
+    cout << deck[i].getFullName() + " ";
     cout << deck[i].getValue() << endl;
   }
   */
