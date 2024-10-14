@@ -9,11 +9,13 @@ class Card {
     string suit;
     string name;
     int value;
+    int aceValue;
 
-    Card(string x, string y, int z) {
+    Card(string x, string y, int z, int a) {
       suit = x;
       name = y;
       value = z;
+      aceValue = a;
     }
 
     Card() {}
@@ -30,12 +32,20 @@ class Card {
       value = z;
     }
 
+    void setAceValue(int a) {
+      aceValue = a;
+    }
+
     string getFullName() {
       return name + " of " + suit;
     }
 
     int getValue() {
       return value;
+    }
+
+    int getAceValue() {
+      return aceValue;
     }
 };
 
@@ -48,7 +58,7 @@ void makeDeck() {
   string suit = "Hearts";
   string num = "Ace";
   for (int i = 1; i < 54; i++) {
-    deck.push_back(Card(suit, num, vn));
+    deck.push_back(Card(suit, num, vn, 11));
 
     //
     if (i%4 == 0) {
@@ -102,6 +112,7 @@ void play() {
   int cTwo = rand() % 52;
 
   int value = deck[cOne].getValue() + deck[cTwo].getValue();
+  int aceValue = 0;
 
   cout << "You cards are: ";
   cout << deck[cOne].getFullName() + " and " + deck[cTwo].getFullName() << endl;
@@ -113,7 +124,7 @@ void play() {
 int main() {
   cout << "Welcome to BlackJack! \n";
 
-  Card cc("Test", "Twelve", 12);
+  Card cc("Test", "Twelve", 12, 12);
   cc.getFullName();
   cc.getValue();
 
@@ -124,6 +135,7 @@ int main() {
   for (int i = 0; i < 52; i++) {
     cout << deck[i].getFullName() + " ";
     cout << deck[i].getValue() << endl;
+    cout << deck[i].getAceValue() << endl;
   }
   */
 
