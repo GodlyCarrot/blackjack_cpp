@@ -40,6 +40,10 @@ class Card {
       return name + " of " + suit;
     }
 
+    string getName() {
+      return name;
+    }
+
     int getValue() {
       return value;
     }
@@ -112,13 +116,19 @@ void play() {
   int cTwo = rand() % 52;
 
   int value = deck[cOne].getValue() + deck[cTwo].getValue();
-  int aceValue = 0;
+  int aceValue;
+
+  if (deck[cOne].getName() == "Ace") {
+    aceValue = deck[cOne].getAceValue() + deck[cTwo].getValue();
+  } else if (deck[cTwo].getName() == "Ace") {
+    aceValue = deck[cOne].getValue() + deck[cTwo].getAceValue();
+  }
 
   cout << "You cards are: ";
   cout << deck[cOne].getFullName() + " and " + deck[cTwo].getFullName() << endl;
   cout << "The value is: ";
   cout << value << endl;
-  cout << "\nWould you like to hit or stand?"; 
+  cout << "\nWould you like to hit or stand?" << endl;
 }
 
 int main() {
