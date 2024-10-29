@@ -115,6 +115,8 @@ void play() {
   int cOne = rand() % 52;
   int cTwo = rand() % 52;
 
+  string Pinput = "";
+
   int value = deck[cOne].getValue() + deck[cTwo].getValue();
   int aceValue;
 
@@ -122,6 +124,8 @@ void play() {
     aceValue = deck[cOne].getAceValue() + deck[cTwo].getValue();
   } else if (deck[cTwo].getName() == "Ace") {
     aceValue = deck[cOne].getValue() + deck[cTwo].getAceValue();
+  } else {
+    aceValue = 1;
   }
 
   cout << "You cards are: ";
@@ -129,6 +133,10 @@ void play() {
   cout << "The value is: ";
   cout << value << endl;
   cout << "\nWould you like to hit or stand?" << endl;
+
+  cin >> Pinput;
+
+  cout << Pinput;
 }
 
 int main() {
