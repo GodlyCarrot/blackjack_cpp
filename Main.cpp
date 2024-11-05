@@ -110,15 +110,27 @@ void makeDeck() {
   }
 }
 
-void play() {
+int cOne;
+int cTwo;
+string Pinput;
+int value;
+int aceValue;
+
+void rng() {
+  extern int cOne;
+  extern int cTwo;
+  extern string Pinput;
+  extern int value;
+  extern int aceValue;
+
   srand(time(0));
-  int cOne = rand() % 52;
-  int cTwo = rand() % 52;
+  cOne = rand() % 52;
+  cTwo = rand() % 52;
 
-  string Pinput = "";
+  //string Pinput = "";
 
-  int value = deck[cOne].getValue() + deck[cTwo].getValue();
-  int aceValue;
+  value = deck[cOne].getValue() + deck[cTwo].getValue();
+  aceValue;
 
   if (deck[cOne].getName() == "Ace") {
     aceValue = deck[cOne].getAceValue() + deck[cTwo].getValue();
@@ -127,7 +139,9 @@ void play() {
   } else {
     aceValue = 1;
   }
+}
 
+void play() {
   cout << "You cards are: ";
   cout << deck[cOne].getFullName() + " and " + deck[cTwo].getFullName() << endl;
   cout << "The value is: ";
@@ -149,6 +163,7 @@ int main() {
   cc.getValue();
 
   makeDeck();
+  rng();
   play();
 
   /*
