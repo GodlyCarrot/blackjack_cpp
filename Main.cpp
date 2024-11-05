@@ -136,7 +136,9 @@ void play() {
 
   cin >> Pinput;
 
-  cout << Pinput;
+  if (Pinput != "hit") {
+    play();
+  }
 }
 
 int main() {
