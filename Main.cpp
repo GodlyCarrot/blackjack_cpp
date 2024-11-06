@@ -150,7 +150,11 @@ void play() {
 
   cin >> Pinput;
 
-  if (Pinput != "hit") {
+  if (Pinput == "hit") {
+    play();
+  } else if (Pinput == "stand") {
+    play();
+  } else {
     play();
   }
 }
