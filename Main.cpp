@@ -156,9 +156,12 @@ void rng() {
 
 void draw() {
   extern int value;
+  extern int dValue;
 
   int card = rand() % 52;
+  int card2 = rand() % 52;
   value += deck[card].getValue();
+  dValue += deck[card2].getValue();
 
   cout << "\nYou pulled " + deck[card].getFullName() << endl;
   //cout << "Your hand value is now: " + value;
