@@ -112,24 +112,34 @@ void makeDeck() {
 
 int cOne;
 int cTwo;
+int cThree;
+int cFour;
 string Pinput;
 int value;
 int aceValue;
+int dValue;
 
 void rng() {
   extern int cOne;
   extern int cTwo;
+  extern int cThree;
+  extern int cFour;
   extern string Pinput;
   extern int value;
   extern int aceValue;
+  extern int dValue;
 
   srand(time(0));
   cOne = rand() % 52;
   cTwo = rand() % 52;
 
+  cThree = rand() % 52;
+  cFour = rand() % 52;
+
   //string Pinput = "";
 
   value = deck[cOne].getValue() + deck[cTwo].getValue();
+  dValue = deck[cThree].getValue() + deck[cFour].getValue();
   aceValue;
 
   if (deck[cOne].getName() == "Ace") {
@@ -139,18 +149,32 @@ void rng() {
   } else {
     aceValue = 1;
   }
+
+  cout << "You cards are: ";
+  cout << deck[cOne].getFullName() + " and " + deck[cTwo].getFullName() << endl;
+}
+
+void draw() {
+  extern int value;
+
+  int card = rand() % 52;
+  value += deck[card].getValue();
+
+  cout << "\nYou pulled " + deck[card].getFullName() << endl;
+  //cout << "Your hand value is now: " + value;
 }
 
 void play() {
-  cout << "You cards are: ";
-  cout << deck[cOne].getFullName() + " and " + deck[cTwo].getFullName() << endl;
   cout << "The value is: ";
   cout << value << endl;
+  cout << "The dealer has a value of: ";
+  cout << dValue << endl;
   cout << "\nWould you like to hit or stand?" << endl;
 
   cin >> Pinput;
 
   if (Pinput == "hit") {
+    draw();
     play();
   } else if (Pinput == "stand") {
     play();
