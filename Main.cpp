@@ -178,7 +178,11 @@ void play() {
 
   if (Pinput == "hit") {
     draw();
-    play();
+    if (value > 22) {
+      cout << "You lose :(";
+    } else {
+      play();
+    }
   } else if (Pinput == "stand") {
     play();
   } else {
